@@ -33,7 +33,7 @@ class AlbumsController < ApplicationController
 
   def show
     @album = Album.find(params[:id])
-    binding.pry
+      
     render :show
   end
 
