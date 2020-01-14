@@ -1,4 +1,15 @@
+<% if @album.errors.any? %>
+  <h3>Please fix these errors:</h3>
+  <ul>
+    <% @album.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
 <h1>New album</h1>
+
+<%= render "layouts/errors", :object => @album %>
 
 <%= form_for @album do |f| %>
   <%= f.label :name %>
